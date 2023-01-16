@@ -48,4 +48,6 @@ return require('packer').startup(function(use)
 		  {'rafamadriz/friendly-snippets'},
 	  }
   }
+  use ('andweeb/presence.nvim')
+  use ('jiangmiao/auto-pairs')
 end)
