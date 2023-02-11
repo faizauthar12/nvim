@@ -50,4 +50,6 @@ return require('packer').startup(function(use)
   }
   use ('andweeb/presence.nvim')
   use ('jiangmiao/auto-pairs')
+
+  use('darrikonn/vim-gofmt', {run = ':GoUpdateBinaries'})
 end)
