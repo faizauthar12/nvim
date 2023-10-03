@@ -15,12 +15,13 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
+					"gopls",
 				},
 				automatic_installation = true,
 			})
 
 			-- Quick access via keymap
-			-- require("helpers.keys").map("n", "<leader>M", "<cmd>Mason<cr>", "Show Mason")
+			require("helpers.keys").map("n", "<leader>M", "<cmd>Mason<cr>", "Show Mason")
 
 			-- Neodev setup before LSP config
 			require("neodev").setup()
@@ -103,6 +104,19 @@ return {
 						},
 					},
 				},
+			})
+
+			-- Golang
+			require("lspconfig")["gopls"].setup({
+				settings = {
+					gopls = {
+					  analyses = {
+						unusedparams = true,
+					  },
+					  staticcheck = true,
+					  gofumpt = true,
+					},
+				  },
 			})
 		end,
 	},
