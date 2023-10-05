@@ -8,4 +8,4 @@ require("core.keymaps")
 require("core.options")
 
 -- Autocomands
-require("core/autocmds")
+require("core.autocmds")
