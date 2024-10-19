@@ -8,6 +8,7 @@ return {
             "folke/neodev.nvim",
             "RRethy/vim-illuminate",
             "hrsh7th/cmp-nvim-lsp",
+            "MysticalDevil/inlay-hints.nvim",
         },
         config = function()
             -- Set up Mason before anything else
@@ -78,6 +79,9 @@ return {
 
                 -- Attach and configure vim-illuminate
                 require("illuminate").on_attach(client)
+
+                -- Attach and configure inlay-hints
+                require("inlay-hints").on_attach(client, bufnr)
             end
 
             -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
@@ -117,6 +121,15 @@ return {
                         },
                         staticcheck = true,
                         gofumpt = true,
+                        hints = {
+                            rangeVariableTypes = true,
+                            parameterNames = true,
+                            constantValues = true,
+                            assignVariableTypes = true,
+                            compositeLiteralFields = true,
+                            compositeLiteralTypes = true,
+                            functionTypeParameters = true,
+                        },
                     },
                 },
             })
