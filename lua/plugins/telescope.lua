@@ -41,6 +41,9 @@ return {
             map("n", "<leader>sd", require("telescope.builtin").diagnostics, "Diagnostics")
 
             map("n", "<C-p>", require("telescope.builtin").keymaps, "Search keymaps")
+
+            -- Close buffer
+            map("n", "<leader>bd", ":bdelete<cr>", "Close buffer")
         end,
     },
 }
