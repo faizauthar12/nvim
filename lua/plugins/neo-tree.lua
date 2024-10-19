@@ -11,9 +11,15 @@ return {
             require("neo-tree").setup()
             require("helpers.keys").map(
                 { "n", "v" },
-                "<leader>e",
+                "<C-M-b>",
                 "<cmd>NeoTreeRevealToggle<cr>",
-                "Toggle file explorer"
+                "Neotree: Toggle file explorer"
+            )
+            require("helpers.keys").map(
+                { "n", "v" },
+                "<leader>e",
+                "<cmd>Neotree<cr>",
+                "Neotree: move buffer to file explorer"
             )
         end,
     },
