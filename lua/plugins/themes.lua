@@ -1,7 +1,7 @@
 -- Themes
 return {
-	{
-		"rose-pine/nvim",
-		name = "rose-pine",
-	},
+    {
+        "rose-pine/nvim",
+        name = "rose-pine",
+    },
 }
