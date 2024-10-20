@@ -14,17 +14,21 @@ return {
                     width = 30,
                 }
             })
-            require("helpers.keys").map(
+
+            local map = require("helpers.keys").map
+
+            map(
                 { "n", "v" },
                 "<C-M-b>",
-                "<cmd>NeoTreeRevealToggle<cr>",
+                "<cmd>Neotree toggle<cr>",
                 "Neotree: Toggle file explorer"
             )
-            require("helpers.keys").map(
+
+            map(
                 { "n", "v" },
                 "<leader>e",
-                "<cmd>Neotree<cr>",
-                "Neotree: move buffer to file explorer"
+                "<cmd>Neotree focus<cr>",
+                "Neotree: focus to file explorer"
             )
         end,
     },
