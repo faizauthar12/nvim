@@ -17,19 +17,8 @@ return {
 
             local map = require("helpers.keys").map
 
-            map(
-                { "n", "v" },
-                "<C-M-b>",
-                "<cmd>Neotree toggle<cr>",
-                "Neotree: Toggle file explorer"
-            )
-
-            map(
-                { "n", "v" },
-                "<leader>e",
-                "<cmd>Neotree focus<cr>",
-                "Neotree: focus to file explorer"
-            )
+            map({ "n", "v" },"<C-M-b>","<cmd>Neotree toggle<cr>","Neotree: Toggle file explorer")
+            map({ "n", "v" },"<leader>e","<cmd>Neotree focus<cr>","Neotree: focus to file explorer")
         end,
     },
 }
