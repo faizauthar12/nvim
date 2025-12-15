@@ -89,7 +89,7 @@ return {
             capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
             -- Lua
-            require("lspconfig")["lua_ls"].setup({
+            vim.lsp.config("lua_ls", {
                 on_attach = on_attach,
                 capabilities = capabilities,
                 settings = {
@@ -111,7 +111,7 @@ return {
             })
 
             -- Golang
-            require("lspconfig")["gopls"].setup({
+            vim.lsp.config("gopls", {
                 on_attach = on_attach,
                 capabilities = capabilities,
                 settings = {
