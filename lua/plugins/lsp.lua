@@ -17,6 +17,9 @@ return {
                 ensure_installed = {
                     "lua_ls",
                     "gopls",
+                    "clangd",
+                    "pyright",
+                    "rust_analyzer",
                 },
                 automatic_installation = true,
             })
@@ -129,6 +132,31 @@ return {
                             compositeLiteralFields = true,
                             compositeLiteralTypes = true,
                             functionTypeParameters = true,
+                        },
+                    },
+                },
+            })
+
+            -- C/C++
+            vim.lsp.config("clangd", {
+                on_attach = on_attach,
+                capabilities = capabilities,
+            })
+
+            -- Python
+            vim.lsp.config("pyright", {
+                on_attach = on_attach,
+                capabilities = capabilities,
+            })
+
+            -- Rust
+            vim.lsp.config("rust_analyzer", {
+                on_attach = on_attach,
+                capabilities = capabilities,
+                settings = {
+                    ["rust-analyzer"] = {
+                        check = {
+                            command = "clippy",
                         },
                     },
                 },

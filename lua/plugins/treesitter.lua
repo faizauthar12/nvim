@@ -23,7 +23,7 @@ return {
                 -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
                 auto_install = true,
 
-                highlight = { 
+                highlight = {
                     enable = true,
 
                     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
@@ -31,6 +31,46 @@ return {
                     -- Using this option may slow down your editor, and you may see some duplicate highlights.
                     -- Instead of true it can also be a list of languages
                     additional_vim_regex_highlighting = false,
+                },
+
+                textobjects = {
+                    select = {
+                        enable = true,
+                        lookahead = true,
+                        keymaps = {
+                            ["af"] = "@function.outer",
+                            ["if"] = "@function.inner",
+                            ["ac"] = "@class.outer",
+                            ["ic"] = "@class.inner",
+                            ["aa"] = "@parameter.outer",
+                            ["ia"] = "@parameter.inner",
+                        },
+                    },
+                    move = {
+                        enable = true,
+                        set_jumps = true,
+                        goto_next_start = {
+                            ["]f"] = "@function.outer",
+                            ["]c"] = "@class.outer",
+                        },
+                        goto_next_end = {
+                            ["]F"] = "@function.outer",
+                            ["]C"] = "@class.outer",
+                        },
+                        goto_previous_start = {
+                            ["[f"] = "@function.outer",
+                            ["[c"] = "@class.outer",
+                        },
+                        goto_previous_end = {
+                            ["[F"] = "@function.outer",
+                            ["[C"] = "@class.outer",
+                        },
+                    },
+                    swap = {
+                        enable = true,
+                        swap_next = { ["<leader>na"] = "@parameter.inner" },
+                        swap_previous = { ["<leader>pa"] = "@parameter.inner" },
+                    },
                 },
             })
 
